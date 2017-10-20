@@ -395,7 +395,7 @@
                 "when": "editorTextFocus"
             },
             {
-                "key": "\"",
+                "key": "Shift+'",
                 "command": "extension.aural-coding-vscode_34",
                 "when": "editorTextFocus"
             },
@@ -435,12 +435,12 @@
                 "when": "editorTextFocus"
             },
             {
-                "key": "*",
+                "key": "Shift+8",
                 "command": "extension.aural-coding-vscode_42",
                 "when": "editorTextFocus"
             },
             {
-                "key": "+",
+                "key": "Shift+=",
                 "command": "extension.aural-coding-vscode_43",
                 "when": "editorTextFocus"
             },
