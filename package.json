@@ -2,8 +2,20 @@
     "name": "aural-coding-vscode",
     "displayName": "Aural Coding",
     "description": "A Visual Studio Code extension that creates sweet melodies based on what you type",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "publisher": "jeng",
+    "author": {
+        "name": "Wittawat Jeng Patcharinsak"
+    },
+    "bugs": {
+        "url": "https://github.com/jengjeng/aural-coding-vscode/issues",
+        "email": "smcbreen@microsoft.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jengjeng/aural-coding-vscode.git"
+    },
+    "homepage": "https://github.com/jengjeng/aural-coding-vscode/blob/master/README.md",
     "icon": "images/icon.jpg",
     "engines": {
         "vscode": "^1.17.0"
