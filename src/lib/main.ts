@@ -15,7 +15,7 @@ const wrapper: IAuralCoding = {
 
   deactivate() {
     if (this.auralCoding != null) {
-      this.auralCoding.unsubscribe()
+      // this.auralCoding.unsubscribe && this.auralCoding.unsubscribe()
     }
     return this.auralCoding = null
   }
