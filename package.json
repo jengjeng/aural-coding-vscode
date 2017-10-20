@@ -2,7 +2,7 @@
     "name": "aural-coding-vscode",
     "displayName": "Aural Coding",
     "description": "A Visual Studio Code extension that creates sweet melodies based on what you type",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "publisher": "jeng",
     "icon": "images/icon.jpg",
     "engines": {
@@ -531,11 +531,6 @@
                 "when": "editorTextFocus"
             },
             {
-                "key": "`",
-                "command": "extension.aural-coding-vscode_96",
-                "when": "editorTextFocus"
-            },
-            {
                 "key": "Shift+[",
                 "command": "extension.aural-coding-vscode_123",
                 "when": "editorTextFocus"
@@ -548,11 +543,6 @@
             {
                 "key": "Shift+]",
                 "command": "extension.aural-coding-vscode_125",
-                "when": "editorTextFocus"
-            },
-            {
-                "key": "Shift+`",
-                "command": "extension.aural-coding-vscode_126",
                 "when": "editorTextFocus"
             }
         ]
