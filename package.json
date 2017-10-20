@@ -2,7 +2,7 @@
     "name": "aural-coding-vscode",
     "displayName": "Aural Coding",
     "description": "A Visual Studio Code extension that creates sweet melodies based on what you type",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "publisher": "jeng",
     "author": {
         "name": "Wittawat Jeng Patcharinsak"
@@ -387,6 +387,156 @@
             {
                 "key": "NumPad9",
                 "command": "extension.aural-coding-vscode_57_1",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "Shift+1",
+                "command": "extension.aural-coding-vscode_33",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "\"",
+                "command": "extension.aural-coding-vscode_34",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "Shift+3",
+                "command": "extension.aural-coding-vscode_35",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "Shift+4",
+                "command": "extension.aural-coding-vscode_36",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "Shift+5",
+                "command": "extension.aural-coding-vscode_37",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "Shift+7",
+                "command": "extension.aural-coding-vscode_38",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "'",
+                "command": "extension.aural-coding-vscode_39",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "Shift+9",
+                "command": "extension.aural-coding-vscode_40",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "Shift+0",
+                "command": "extension.aural-coding-vscode_41",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "*",
+                "command": "extension.aural-coding-vscode_42",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "+",
+                "command": "extension.aural-coding-vscode_43",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": ",",
+                "command": "extension.aural-coding-vscode_44",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "-",
+                "command": "extension.aural-coding-vscode_45",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": ".",
+                "command": "extension.aural-coding-vscode_46",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "/",
+                "command": "extension.aural-coding-vscode_47",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "Shift+;",
+                "command": "extension.aural-coding-vscode_58",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": ";",
+                "command": "extension.aural-coding-vscode_59",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "Shift+,",
+                "command": "extension.aural-coding-vscode_60",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "=",
+                "command": "extension.aural-coding-vscode_61",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "Shift+.",
+                "command": "extension.aural-coding-vscode_62",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "Shift+/",
+                "command": "extension.aural-coding-vscode_63",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "Shift+2",
+                "command": "extension.aural-coding-vscode_64",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "[",
+                "command": "extension.aural-coding-vscode_91",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "\\",
+                "command": "extension.aural-coding-vscode_92",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "]",
+                "command": "extension.aural-coding-vscode_93",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "Shift+6",
+                "command": "extension.aural-coding-vscode_94",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "Shift+-",
+                "command": "extension.aural-coding-vscode_95",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "Shift+[",
+                "command": "extension.aural-coding-vscode_123",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "Shift+\\",
+                "command": "extension.aural-coding-vscode_124",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "Shift+]",
+                "command": "extension.aural-coding-vscode_125",
                 "when": "editorTextFocus"
             }
         ]
