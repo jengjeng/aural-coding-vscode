@@ -12,6 +12,7 @@ export default {
       const filePath = `${__dirname}/../../audio/${instrumentPath}/${note}.mp3`;
       if (_isWindows) {
         cp.execFile(_playerWindowsPath, [filePath]);
+        resolve();
       } else {
         player.play(filePath, err => {
           if (err) {
