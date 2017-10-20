@@ -4,9 +4,6 @@
 import * as vscode from 'vscode';
 import AuralCoding from './lib/main'
 
-const _checkAvailableKey = 
-  (key: string, specialKey: boolean, keyText: string, keyCode: number) => !specialKey // ignore special chars, for now.
-
 interface VSCodeKeybinding {
   key: string;
   specialKey?: boolean,
@@ -58,14 +55,12 @@ async function handleKey(key: string, specialKey: boolean, keyText: string, keyC
     text: keyText
   });
   
-  if (_checkAvailableKey(key, specialKey, keyText, keyCode)) {
-    await AuralCoding.auralCoding.noteOn({
-      keyIdentifier: specialKey ? key : keyText,
-      shiftKey: isShift,
-      ctrlKey: isCtrl,
-      altKey: isAlt,
-    })
-  }
+  await AuralCoding.auralCoding.noteOn({
+    keyIdentifier: specialKey ? key : keyText,
+    shiftKey: isShift,
+    ctrlKey: isCtrl,
+    altKey: isAlt,
+  })
 }
 
 function __range__(left, right, inclusive) {
