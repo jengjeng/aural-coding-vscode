@@ -22,20 +22,24 @@ const packagejson: {
 export function activate(context: vscode.ExtensionContext) {
 
   AuralCoding.activate()
-  // var editor = vscode.window.activeTextEditor;
+
+  // const editor = vscode.window.activeTextEditor;
+  // console.log(editor)
   
   // Use the console to output diagnostic information (console.log) and errors (console.error)
   // This line of code will only be executed once when your extension is activated
   console.log('"aural-coding-vscode" is now active!');
   let disposable = null
 
-  disposable = vscode.commands.registerCommand(`extension.aural-coding-vscode-enable`, () => {
+  disposable = vscode.commands.registerCommand(`extension.aural-coding-vscode-enable`, async () => {
     AuralCoding.deactivate()
     AuralCoding.activate()
+    await saveState(context, { enabled: true })
   });
   context.subscriptions.push(disposable);
-  disposable = vscode.commands.registerCommand(`extension.aural-coding-vscode-disable`, () => {
+  disposable = vscode.commands.registerCommand(`extension.aural-coding-vscode-disable`, async () => {
     AuralCoding.deactivate()
+    await saveState(context, { enabled: false })
   });
   context.subscriptions.push(disposable);
 
@@ -52,7 +56,7 @@ export function activate(context: vscode.ExtensionContext) {
     const isAlt = isAltRg.test(key)
     
     disposable = vscode.commands.registerCommand(`extension.aural-coding-vscode_${ keyCode }${ branch ? '_' + branch : ''}`, () => {
-      handleKey(key, specialKey, keyText, keyCode, isShift, isCtrl, isAlt);
+      handleKey(context, key, specialKey, keyText, keyCode, isShift, isCtrl, isAlt);
     });
     context.subscriptions.push(disposable);
   }
@@ -63,12 +67,31 @@ export function deactivate() {
   AuralCoding.deactivate()
 }
 
-async function handleKey(key: string, specialKey: boolean, keyText: string, keyCode: number, isShift: boolean, isCtrl: boolean, isAlt: boolean): Promise < void > {
+async function saveState(context: vscode.ExtensionContext, value: any) {
+  await context.globalState.update('app', value)
+}
+
+async function getState(context: vscode.ExtensionContext) {
+  return await context.globalState.get('app', { enabled: true })
+}
+
+async function handleKey(
+  context: vscode.ExtensionContext,
+  key: string,
+  specialKey: boolean,
+  keyText: string,
+  keyCode: number,
+  isShift: boolean,
+  isCtrl: boolean,
+  isAlt: boolean
+): Promise < void > {
+  
   await vscode.commands.executeCommand('default:type', {
     text: keyText
   });
   
-  if (AuralCoding.auralCoding === null) return;
+  const { enabled } = await getState(context)
+  if (enabled === false) return;
   await AuralCoding.auralCoding.noteOn({
     keyIdentifier: specialKey ? key : keyText,
     shiftKey: isShift,
