@@ -4,7 +4,7 @@
 [![Visual Studio Marketplace](https://img.shields.io/vscode-marketplace/r/jeng.aural-coding-vscode.svg)](https://marketplace.visualstudio.com/items?itemName=jeng.aural-coding-vscode)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/jengjeng/aural-coding-vscode/blob/master/LICENSE)
 
-A Visual Studio Code extension that creates sweet melodies based on what you type. inspired by [aural-coding (Atom's version)](https://github.com/probablycorey/aural-coding)
+A Visual Studio Code extension is extension that creates sweet melodies based on what you type. inspired by [aural-coding (Atom's version)](https://github.com/probablycorey/aural-coding)
 
 ## Installation
 Run `code --install-extension jeng.aural-coding-vscode`
