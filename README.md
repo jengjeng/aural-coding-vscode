@@ -28,7 +28,7 @@ Add your functions and unit tests for any new or changed functionality. Lint and
 
 ### 1.0.0
 
-Basic functional working on Windows and macOS.
+Basic functions work on Windows and macOS.
 
 
 -----------------------------------------------------------------------------------------------------------
