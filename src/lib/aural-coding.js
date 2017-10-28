@@ -39,7 +39,7 @@ export default class AuralCoding {
       return;
     }
 
-    if (/^[a-z]$/i.test(key)) {
+    // if (/^[a-z]$/i.test(key)) {
       const keyCode = key.toUpperCase().charCodeAt(0);
       index = 24 + ((keyCode - 'A'.charCodeAt(0)) % 12);
       if (/[A-Z]/.test(key)) {
@@ -50,48 +50,48 @@ export default class AuralCoding {
         buffer: this.keys[this.majorScaleNotes[index]],
         velocity: 1
       };
-    } else {
-      let velocity;
-      [index, velocity] = Array.from((() => {
-        switch (key) {
-          case 'backspace':
-            return [50, 1];
-          case 'delete':
-            return [49, 1];
-          case 'space':
-            return [41, 0.025];
-          case '\t':
-          case 'tab':
-            return [41];
-          case '.':
-            return [56];
-          case '"':
-            return [57];
-          case '\'':
-            return [58];
-          case '+':
-            return [61];
-          case '[':
-            return [36];
-          case ']':
-            return [37];
-          case '(':
-            return [38];
-          case ')':
-            return [39];
-          case '!':
-            return [54, 2];
-          default:
-            return [45];
-        }
-      })());
+    // } else {
+    //   let velocity;
+    //   [index, velocity] = Array.from((() => {
+    //     switch (key) {
+    //       case 'backspace':
+    //         return [50, 1];
+    //       case 'delete':
+    //         return [49, 1];
+    //       case 'space':
+    //         return [41, 0.025];
+    //       case '\t':
+    //       case 'tab':
+    //         return [41];
+    //       case '.':
+    //         return [56];
+    //       case '"':
+    //         return [57];
+    //       case '\'':
+    //         return [58];
+    //       case '+':
+    //         return [61];
+    //       case '[':
+    //         return [36];
+    //       case ']':
+    //         return [37];
+    //       case '(':
+    //         return [38];
+    //       case ')':
+    //         return [39];
+    //       case '!':
+    //         return [54, 2];
+    //       default:
+    //         return [45];
+    //     }
+    //   })());
 
-      return {
-        instrument: 'drum',
-        buffer: this.drums[index],
-        velocity: velocity != null ? velocity : 0.2
-      };
-    }
+    //   return {
+    //     instrument: 'drum',
+    //     buffer: this.drums[index],
+    //     velocity: velocity != null ? velocity : 0.2
+    //   };
+    // }
   }
 
   async noteOn(event) {
