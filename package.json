@@ -2,7 +2,7 @@
     "name": "aural-coding-vscode",
     "displayName": "Aural Coding (Keyboard sounds)",
     "description": "A Visual Studio Code extension that creates sweet melodies based on what you type",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "publisher": "jeng",
     "author": {
         "name": "Wittawat Jeng Patcharinsak"
