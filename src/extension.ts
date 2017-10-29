@@ -29,7 +29,7 @@ export function activate(context: vscode.ExtensionContext) {
   disposable = vscode.workspace.onDidChangeTextDocument((event: vscode.TextDocumentChangeEvent) => {
     if (!AuralCoding.isActivated()) return;
 
-    const { contentChanges: [{ text }] } = event
+    const { contentChanges: [{ text } = { text: '' }] } = event
     const textKey = text[0] || ''
     const isShift = textKey.toUpperCase() === textKey
     handleKey(textKey, isShift)
