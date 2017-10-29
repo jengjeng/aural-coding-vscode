@@ -4,19 +4,6 @@
 import * as vscode from 'vscode';
 import AuralCoding from './lib/main'
 
-interface VSCodeKeybinding {
-  key: string;
-  specialKey?: boolean,
-  command: string;
-  when: string;
-}
-
-const packagejson: {
-  contributes: {
-    keybindings: VSCodeKeybinding[];
-  }
-} = require('../package.json');
-
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
@@ -24,7 +11,7 @@ export function activate(context: vscode.ExtensionContext) {
   AuralCoding.activate()
   console.log('"aural-coding-vscode" is now active!');
 
-  let disposable = null
+  let disposable: vscode.Disposable = null
 
   disposable = vscode.commands.registerCommand(`extension.aural-coding-vscode-enable`, async () => {
     AuralCoding.deactivate()
@@ -32,20 +19,22 @@ export function activate(context: vscode.ExtensionContext) {
     await saveState(context, { enabled: true })
   });
   context.subscriptions.push(disposable);
+
   disposable = vscode.commands.registerCommand(`extension.aural-coding-vscode-disable`, async () => {
     AuralCoding.deactivate()
     await saveState(context, { enabled: false })
   });
   context.subscriptions.push(disposable);
 
-  vscode.workspace.onDidChangeTextDocument((event: vscode.TextDocumentChangeEvent) => {
-    if (!AuralCoding.auralCoding) return;
+  disposable = vscode.workspace.onDidChangeTextDocument((event: vscode.TextDocumentChangeEvent) => {
+    if (!AuralCoding.isActivated()) return;
 
     const { contentChanges: [{ text }] } = event
     const textKey = text[0] || ''
     const isShift = textKey.toUpperCase() === textKey
     handleKey(textKey, isShift)
   })
+  context.subscriptions.push(disposable);
 }
 
 // this method is called when your extension is deactivated
