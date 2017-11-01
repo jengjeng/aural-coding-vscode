@@ -24,6 +24,7 @@ Aural Coding will start immediately when visual studio code is started. However,
 
 We are in the development phase. We are happy if you want to help out by sending a pull request.
 
+- [ ] Slow audio player on Windows.
 - [ ] Play audio with AudioBuffer instead of files.
 
 ## Contributing
